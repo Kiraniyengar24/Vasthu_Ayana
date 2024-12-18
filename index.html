@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vasthu Aaya</title>
+    <style>
+
+        /* body {
+            font-family: Arial, sans-serif;
+            background-color: #FFFFFF;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        input[type="number"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="button"] {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="button"]:hover {
+            background-color: #218838;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color:#31556b;
+        }
+    "shadow": (
+      property: box-shadow,
+      class: shadow,
+      values: (
+        null: $box-shadow,
+        sm: $box-shadow-sm,
+        lg: $box-shadow-lg,
+        none: none,
+      )
+    )
+    
+      footer {
+      padding: 20px;
+      text-align: center;
+      background: #ddd;
+      margin-top: 20px;
+    }
+
+    header {
+      padding: 30px;
+      font-size: 40px;
+      text-align: center;
+      background: white;
+    }
+
+    leftcolumn {   
+      float: left;
+      width: 75%;
+    }
+
+    card {
+      background-color: white;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+
+    row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+ 
+    footer {
+      padding: 20px;
+      text-align: center;
+      background: #ddd;
+      margin-top: 20px;
+    }
+
+    rightcolumn {
+      float: left;
+      width: 25%;
+      padding-left: 20px;
+    }
+    @media screen and (max-width: 800px) {
+      .leftcolumn, .rightcolumn {   
+        width: 100%;
+        padding: 0;
+      }
+    }
+
+    row:after {
+      content: "";
+      display: table;
+      clear: both;
+    } */
+
+        * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial;
+      padding: 20px;
+      background: #f1f1f1;
+    }
+
+    .header {
+      padding: 1px;
+      font-size: 20px;
+      text-align: center;
+      background: white;
+    }
+
+    .leftcolumn {   
+      float: left;
+      width: 70%;
+    }
+
+    .rightcolumn {
+      float: left;
+      width: 30%;
+      padding-left: 20px;
+    }
+
+    .fakeimg {
+      background-color: #aaa;
+      width: 100%;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: white;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+  
+    .footer {
+      padding: 1px;
+      text-align: center;
+      background: white;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 1);
+      max-width: 600px;
+      margin: auto;
+    }
+
+ 
+          @media screen and (max-width: 800px) {
+            .leftcolumn, .rightcolumn {   
+              width: 100%;
+              padding: 0;
+            }
+          }
+
+    input[type="number"] {
+                width: calc(100% - 22px);
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+            input[type="button"] {
+                background-color: #28a745;
+                color: white;
+                padding: 10px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            input[type="button"]:hover {
+                background-color: #218838;
+            }
+      </style>
+    </head>
+    <body>
+    <div class="header">
+      <h2>Vastu Aaya Calculator</h2>
+    </div>
+
+    <div class="row">
+    <div class="leftcolumn">
+
+    <P>The Aaya Calculator is an essential resource for Vastu practitioners, enabling them to calculate the Aya based on a property's dimensions. By inputting the length and width of the property, users can efficiently determine the Aya and gain valuable insights into how well the property aligns with Vastu principles.</p>
+
+
+    <div class="form">
+        Lenght in feet:<br>
+      <div class="shadow-lg p-3 mb-5 bg-body rounded"> <input id="num1" type="number" name="num1" required></div><br>    
+        Width in feet:<br>
+      <input id="num2" type="number" name="num2" required><br>   
+      <input type="button" value="Submit" onclick="calculateProduct();">
+    </div>
+
+    <p id="result"></p>
+
+    <script>
+    function calculateProduct() {
+        var numOne = document.getElementById('num1').value; 
+        var numTwo = document.getElementById('num2').value;
+        
+        var product = parseFloat(numOne) * parseFloat(numTwo);
+
+        var reminder = product % 8;
+
+        var message = "";
+        switch (reminder) {
+            case 1:
+                message = "Dhwajaya";
+                break;
+            case 2:
+                message = "Dhumaya";
+                break;
+            case 3:
+                message = "Simhaya";
+                break;
+            case 4:
+                message = "Sunakaya";
+                break;
+            case 5:
+                message = "Vrushabhaya";
+                break;
+            case 6:
+                message = "Karavashaya";
+                break;
+            case 7:
+                message = "Gajaya";
+                break;
+            case 0:
+                message = "Vayasaya"; // Changed to handle case for remainder being zero
+                break;  
+            default:
+                message = "Reminder is not in the range"; // This will not be reached
+        }
+
+        // Display the result
+        document.getElementById('result').innerText = "The result is "  + message; 
+    }
+</script>
+        <h2>Ayas</h2>
+        <p><b>Dhwajaya</b>: Represents the east direction and is associated with financial gain.</p>
+        <p><b>Simhaya</b>: Represents the south direction and is associated with a luxurious life.</p>
+        <p><b>Dhumaya</b>: Represents the southeast direction and is associated with sorrow.</p>
+        <p><b>Sunakaya</b>: Represents the southwest direction and is associated with great sin.</p>
+        <p><b>Vayasaya</b>: Represents the northeast direction and is associated with death.</p>
+        <p><b>Gajaya</b>: Represents the north direction and is associated with professional success.</p>
+        <p><b>Kharavashaya</b>: Represents the northwest direction.</p>
+        <p><b>Vrishabhaya</b>: Represents the west direction and is associated with wealth and profit.</p>
+</div>
+ <div class="rightcolumn">
+    <div class="card">
+      <h2>About Me</h2>
+        <img src="https://kiraniyengar.com/wp-content/uploads/2018/01/wp-15155920581821221871566.jpg?w=1024" alt="alternatetext"  style="width:250px;height:225px;">
+
+            <p>👋 Hi, This is Ravikiran kc</p>
+            <p>👀 I’m master in Java, React, Technical Writing, and Blogging</p>
+            <p>🌱 I’m currently learning Jenkins, Docker, and AWS</p>
+            <p>💞️ I’m looking to collaborate on the Java projects</p>
+            <p>⚡ Fun fact: Travel Freak, Reader</p>
+            <p>📫 E-mail: Ravikiran_24@yahoo.com</p>
+            <p>📞 Mob: +91 7204728650</p>
+            <p>✨ Blog: <a href="https://kiraniyengar.com/">Kiraniyengar.com</a></p>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <h3>Author: Ravikiran K C, Copyrights 2024. All Right Reserved</h3>
+</div>
+
+</body>
+</html>
